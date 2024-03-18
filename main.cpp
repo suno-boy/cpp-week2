@@ -19,15 +19,22 @@ int main() {
 
   // 출력할 때 3자리 정수로 출력하기
   int answer = dis(gen);
-  std::cout << "Answer is " << std::setw(3) << std::setfill('0') << answer << std::endl;
-  //setw는 출력폭 설정, setfill은 빈 자리에 채울 문자설정
+  // std::cout << "Answer is " << std::setw(3) << std::setfill('0') << answer << std::endl;
+  // setw는 출력폭 설정, setfill은 빈 자리에 채울 문자설정
 
 
+  int i = 5;
   while(true) {
     int input;
     int Strikes = 0;
     int Balls = 0;
 
+    if(i<=0) {
+      std::cout << "You lose!";
+      break;
+    }
+
+    std::cout << i << " chances left." << std::endl;
     std::cout << "Enter a guess: ";
     std::cin >> input;
 
@@ -40,7 +47,7 @@ int main() {
     }
 
     std::cout << "Strikes: " << Strikes << ", Balls: " << Balls << std::endl;
-    
+    i = i - 1; 
   }
 
   return 0;
